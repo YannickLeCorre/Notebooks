@@ -1,0 +1,56 @@
+---
+title: "R language"
+output: html_notebook
+---
+
+The book [Advanced R](https://adv-r.hadley.nz/) explains a lot of fundamental aspects of the R language.
+
+
+The library **lobstr** allows to check the size of a variable 
+
+```{r}
+library(lobstr)
+obj_size(1)
+```
+
+Main object types
+
+```{r, echo=FALSE}
+show_type <- function(element) {
+  show(element)
+  show(typeof(element))
+  str(element)
+}
+```
+
+```{r}
+t1 <- c(1:5)
+#attr(t1, "type") <- "vector of integers"
+show_type(t1)
+```
+
+```{r}
+t2 <- c(1.1, 1e2)
+show_type(t2)
+```
+
+```{r}
+t3 <- c("dog", "cat")
+show_type(t3)
+```
+
+```{r}
+t4 <- c(TRUE, FALSE)
+show_type(t4)
+```
+
+```{r}
+t5 <- list(1:2, 2:3)
+show_type(t5)
+```
+
+
+
+```{r}
+
+```
