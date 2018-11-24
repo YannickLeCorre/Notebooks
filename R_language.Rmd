@@ -1,6 +1,8 @@
 ---
 title: "R language"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 The book [Advanced R](https://adv-r.hadley.nz/) explains a lot of fundamental aspects of the R language.
@@ -50,7 +52,7 @@ show_type(t5)
 ```
 
 
-
 ```{r}
-
+t6 <- data.frame(col1 = c(1:5), col2 = letters[1:5])
+show_type(t6)
 ```
