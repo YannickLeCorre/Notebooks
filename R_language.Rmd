@@ -1,8 +1,6 @@
 ---
 title: "R language"
-output:
-  html_document:
-    df_print: paged
+output: html_notebook
 ---
 
 The book [Advanced R](https://adv-r.hadley.nz/) explains a lot of fundamental aspects of the R language.
