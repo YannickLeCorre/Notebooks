@@ -3,6 +3,28 @@ title: "R language"
 output: html_notebook
 ---
 
+#Sams Teach Yourself R
+By Andy Nicholls, Richard Pugh, & Aimee Gott (first edition dec 2015)
+
+##object types
+
+4 modes (fonction mode()): 
+
+  - numeric
+  - character
+  - boolean
+  - complex
+
+3 types (fonction class()): 
+
+  - vector (c'est le type de base) - attributes length et names
+  - matrix/array - attribut dim
+  - list
+
+
+
+#Advanced R
+
 The book [Advanced R](https://adv-r.hadley.nz/) explains a lot of fundamental aspects of the R language.
 
 

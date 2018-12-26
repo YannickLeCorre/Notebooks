@@ -1,3 +1,6 @@
 # Notebooks
 
-R language: notes from the book Advanced R by Hadley Wickham
+R language: notes from the books
+
+	- Sams Teach Yourself R
+	- Advanced R by Hadley Wickham
