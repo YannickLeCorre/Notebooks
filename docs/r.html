@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 1 R | R Notebooks in a book</title>
+  <meta name="description" content="Chapter 1 R | R Notebooks in a book">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 1 R | R Notebooks in a book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 R | R Notebooks in a book" />
+  
+  
+  
+
+<meta name="author" content="Yannick Le Corre">
+
+
+<meta name="date" content="2018-12-31">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="resume-analysis.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">My book of notebooks</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>1</b> R</a><ul>
+<li class="chapter" data-level="1.1" data-path="r.html"><a href="r.html#conference-2018"><i class="fa fa-check"></i><b>1.1</b> conference 2018</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="r.html"><a href="r.html#make-a-toy-dataset"><i class="fa fa-check"></i><b>1.1.1</b> make a toy dataset</a></li>
+<li class="chapter" data-level="1.1.2" data-path="r.html"><a href="r.html#examine-your-numeric-columns"><i class="fa fa-check"></i><b>1.1.2</b> Examine your numeric columns</a></li>
+<li class="chapter" data-level="1.1.3" data-path="r.html"><a href="r.html#tidy-columns-containing-colon-separated-values"><i class="fa fa-check"></i><b>1.1.3</b> Tidy columns containing colon separated values</a></li>
+<li class="chapter" data-level="1.1.4" data-path="r.html"><a href="r.html#plot-uncluttered-bar-charts"><i class="fa fa-check"></i><b>1.1.4</b> plot uncluttered bar charts</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="r.html"><a href="r.html#sams-teach-yourself-r"><i class="fa fa-check"></i><b>1.2</b> Sams Teach Yourself R</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="r.html"><a href="r.html#cut-et-split"><i class="fa fa-check"></i><b>1.2.1</b> cut et split</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="r.html"><a href="r.html#advanced-r"><i class="fa fa-check"></i><b>1.3</b> Advanced R</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="resume-analysis.html"><a href="resume-analysis.html"><i class="fa fa-check"></i><b>2</b> Resume analysis</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Notebooks in a book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> R</h1>
+<div id="conference-2018" class="section level2">
+<h2><span class="header-section-number">1.1</span> conference 2018</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
+knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">warning=</span><span class="ot">FALSE</span>, <span class="dt">message=</span><span class="ot">FALSE</span>)</code></pre></div>
+<p>by Emily Robinson (DataCamp) at the 2018 New York R Conference Les packages de l’écosystème tidyverse sont décrits dans le diagramme 1. Noter que leaflet ne fait pas partie de tidyverse.</p>
+<div class="figure">
+<img src="workflow.png" alt="data anlysis workflow (draw.io)" />
+<p class="caption">data anlysis workflow (draw.io)</p>
+</div>
+<div id="make-a-toy-dataset" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> make a toy dataset</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tibble)
+df &lt;-<span class="st"> </span><span class="kw">tribble</span>(
+<span class="op">~</span>date, <span class="op">~</span>whatever, <span class="op">~</span>numstuff1, <span class="op">~</span>numstuff2, <span class="op">~</span>multi_value,
+<span class="st">&quot;10-09-2017&quot;</span>, .<span class="dv">1</span>, <span class="dv">5</span>, <span class="ot">NA</span>, <span class="st">&quot;val1, val2, val3&quot;</span>,
+<span class="st">&quot;10-09-2017&quot;</span>, .<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="st">&quot;val1&quot;</span>,
+<span class="st">&quot;11-09-2017&quot;</span>, .<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="st">&quot;val1, val2&quot;</span>,
+<span class="st">&quot;12-09-2017&quot;</span>, .<span class="dv">5</span>, <span class="ot">Inf</span>, <span class="dv">3</span>, <span class="st">&quot;val1, val2, val3, val4&quot;</span>
+)
+df</code></pre></div>
+<pre><code>## # A tibble: 4 x 5
+##   date       whatever numstuff1 numstuff2 multi_value           
+##   &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;                 
+## 1 10-09-2017      0.1         5        NA val1, val2, val3      
+## 2 10-09-2017      0.5         1         3 val1                  
+## 3 11-09-2017      0.2         3         2 val1, val2            
+## 4 12-09-2017      0.5       Inf         3 val1, val2, val3, val4</code></pre>
+<p>Examine your NAs and empty values</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(purrr)
+df <span class="op">%&gt;%</span>
+<span class="st">  </span>purrr<span class="op">::</span><span class="kw">map_df</span>(<span class="op">~</span><span class="kw">sum</span>(<span class="kw">is.na</span>(.))) <span class="co"># count the NA for every columns of a DF</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 5
+##    date whatever numstuff1 numstuff2 multi_value
+##   &lt;int&gt;    &lt;int&gt;     &lt;int&gt;     &lt;int&gt;       &lt;int&gt;
+## 1     0        0         0         1           0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">na_if</span>(<span class="ot">Inf</span>) <span class="co"># convert empty values into NA values</span>
+df</code></pre></div>
+<pre><code>## # A tibble: 4 x 5
+##   date       whatever numstuff1 numstuff2 multi_value           
+##   &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;                 
+## 1 10-09-2017      0.1         5        NA val1, val2, val3      
+## 2 10-09-2017      0.5         1         3 val1                  
+## 3 11-09-2017      0.2         3         2 val1, val2            
+## 4 12-09-2017      0.5        NA         3 val1, val2, val3, val4</code></pre>
+</div>
+<div id="examine-your-numeric-columns" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Examine your numeric columns</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(skimr)
+df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select_if</span>(is.numeric) <span class="op">%&gt;%</span>
+<span class="st">  </span>skimr<span class="op">::</span><span class="kw">skim</span>() <span class="co"># summary of all the numeric columns</span></code></pre></div>
+<pre><code>## Skim summary statistics
+##  n obs: 4 
+##  n variables: 3 
+## 
+## -- Variable type:numeric -------------------------------------------------------------------------------------------------------------------
+##   variable missing complete n mean   sd  p0  p25  p50 p75 p100     hist
+##  numstuff1       1        3 4 3    2    1   2    3    4    5   &lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;
+##  numstuff2       1        3 4 2.67 0.58 2   2.5  3    3    3   &lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;
+##   whatever       0        4 4 0.32 0.21 0.1 0.18 0.35 0.5  0.5 &lt;U+2583&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;</code></pre>
+</div>
+<div id="tidy-columns-containing-colon-separated-values" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Tidy columns containing colon separated values</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyr)
+<span class="kw">library</span>(stringr)
+df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span>
+<span class="kw">mutate</span>(<span class="dt">colonne =</span> <span class="kw">str_split</span>(multi_value, <span class="st">&quot;,&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># transform into a list of characters</span>
+<span class="kw">unnest</span>() <span class="co"># split into seperate observations</span></code></pre></div>
+</div>
+<div id="plot-uncluttered-bar-charts" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> plot uncluttered bar charts</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(forcats)
+df <span class="op">%&gt;%</span>
+<span class="kw">count</span>(date) <span class="op">%&gt;%</span>
+<span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">fct_reorder</span>(date, n)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># ordonne les colonnes en ordre décroissant</span>
+<span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> n)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_col</span>() <span class="op">+</span><span class="st"> </span><span class="kw">coord_flip</span>()</code></pre></div>
+<p><img src="testbook_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+</div>
+<div id="sams-teach-yourself-r" class="section level2">
+<h2><span class="header-section-number">1.2</span> Sams Teach Yourself R</h2>
+<p>By Andy Nicholls, Richard Pugh, &amp; Aimee Gott (first edition dec 2015) object types</p>
+<p>4 modes (fonction mode()): • numeric • character • boolean • complex</p>
+<p>3 types (fonction class()): • vector (c’est le type de base) - attributes length et names • matrix/array - attribut dim • list</p>
+<div id="cut-et-split" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> cut et split</h3>
+<p>cut est utilisé pour classer des données numériques en facteur</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">numeric_matrix &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span>
+mycut1 &lt;-<span class="st"> </span><span class="kw">cut</span>(numeric_matrix, <span class="dv">3</span>) <span class="co"># classifie les données selon trois classes de valeurs égales</span>
+<span class="kw">head</span>(mycut1)</code></pre></div>
+<pre><code>## [1] (0.901,34] (0.901,34] (0.901,34] (0.901,34] (0.901,34] (0.901,34]
+## Levels: (0.901,34] (34,67] (67,100]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(mycut1)</code></pre></div>
+<pre><code>## mycut1
+## (0.901,34]    (34,67]   (67,100] 
+##         34         33         33</code></pre>
+<p>On peut aussi couper selon des classes numériques spécifiques</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mycut2 &lt;-<span class="st"> </span><span class="kw">cut</span>(numeric_matrix, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>), <span class="dt">include.lowest =</span> <span class="ot">TRUE</span>) <span class="co"># classes [1, 10], ]10, 100]</span>
+<span class="kw">head</span>(mycut2)</code></pre></div>
+<pre><code>## [1] [1,10] [1,10] [1,10] [1,10] [1,10] [1,10]
+## Levels: [1,10] (10,100]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(mycut2)</code></pre></div>
+<pre><code>## mycut2
+##   [1,10] (10,100] 
+##       10       90</code></pre>
+<p>La fonction split permet de découper un ensemble selon des facteurs. Donc on peut combiner les fonctions cut et split pour décomposer un vecteur ou DF en liste de vecteurs/DF groupées par facteur.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mysplit_list &lt;-<span class="st"> </span><span class="kw">split</span>(numeric_matrix, mycut2)</code></pre></div>
+<p>la fonction split fonctionne aussi sur des DF</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">value =</span> <span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>, <span class="dt">size =</span> <span class="dv">100</span>), <span class="dt">whatever =</span> LETTERS[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(LETTERS), <span class="dt">size =</span> <span class="dv">100</span>, <span class="dt">replace=</span><span class="ot">TRUE</span>)])
+<span class="kw">split</span>(df, <span class="kw">cut</span>(df<span class="op">$</span>value, <span class="dv">3</span>))</code></pre></div>
+<pre><code>## $`(3.03,329]`
+##    value whatever
+## 2     95        M
+## 5    219        I
+## 7    306        I
+## 9    158        E
+## 15   270        S
+## 17   276        S
+## 26   237        M
+## 29   206        O
+## 30   300        R
+## 34   194        J
+## 35   243        R
+## 37   149        N
+## 38   117        M
+## 42   173        O
+## 44   207        R
+## 46   303        I
+## 56   314        R
+## 58    40        A
+## 63    42        B
+## 65   203        K
+## 67   112        C
+## 68    43        C
+## 71   132        F
+## 74     4        B
+## 83     7        I
+## 85   269        B
+## 88   153        P
+## 92    22        D
+## 93   138        M
+## 97   316        B
+## 
+## $`(329,653]`
+##    value whatever
+## 1    366        O
+## 3    496        A
+## 8    603        G
+## 10   632        R
+## 12   430        I
+## 13   411        O
+## 18   611        O
+## 20   481        Q
+## 25   340        A
+## 28   634        X
+## 32   450        R
+## 33   438        M
+## 47   610        U
+## 48   619        G
+## 51   423        I
+## 54   530        T
+## 62   466        P
+## 64   485        W
+## 66   574        U
+## 69   465        S
+## 73   594        J
+## 79   384        A
+## 81   420        R
+## 82   525        A
+## 87   424        X
+## 89   376        X
+## 90   391        D
+## 91   469        S
+## 94   352        Q
+## 96   542        Z
+## 98   584        G
+## 99   346        W
+## 
+## $`(653,979]`
+##     value whatever
+## 4     729        M
+## 6     711        W
+## 11    710        Z
+## 14    665        A
+## 16    796        X
+## 19    749        D
+## 21    971        R
+## 22    809        F
+## 23    798        S
+## 24    677        K
+## 27    680        A
+## 31    675        U
+## 36    705        W
+## 39    801        N
+## 40    779        N
+## 41    935        Y
+## 43    730        S
+## 45    663        W
+## 49    978        R
+## 50    773        N
+## 52    934        O
+## 53    972        T
+## 55    884        C
+## 57    973        Y
+## 59    851        H
+## 60    664        G
+## 61    831        V
+## 70    887        A
+## 72    898        L
+## 75    930        E
+## 76    765        S
+## 77    956        W
+## 78    689        D
+## 80    920        J
+## 84    861        C
+## 86    781        K
+## 95    679        F
+## 100   739        H</code></pre>
+</div>
+</div>
+<div id="advanced-r" class="section level2">
+<h2><span class="header-section-number">1.3</span> Advanced R</h2>
+<p>The book <a href="https://adv-r.hadley.nz/">Advanced R</a> explains a lot of fundamental aspects of the R language.</p>
+<p>The library <strong>lobstr</strong> allows to check the size of a variable</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(lobstr)
+<span class="kw">obj_size</span>(<span class="dv">1</span>)</code></pre></div>
+<pre><code>## 56 B</code></pre>
+<p>Main object types</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show_type</span>(t1)</code></pre></div>
+<pre><code>## [1] 1 2 3 4 5
+## [1] &quot;integer&quot;
+##  int [1:5] 1 2 3 4 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">1.1</span>, <span class="fl">1e2</span>)
+<span class="kw">show_type</span>(t2)</code></pre></div>
+<pre><code>## [1]   1.1 100.0
+## [1] &quot;double&quot;
+##  num [1:2] 1.1 100</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>)
+<span class="kw">show_type</span>(t3)</code></pre></div>
+<pre><code>## [1] &quot;dog&quot; &quot;cat&quot;
+## [1] &quot;character&quot;
+##  chr [1:2] &quot;dog&quot; &quot;cat&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t4 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>)
+<span class="kw">show_type</span>(t4)</code></pre></div>
+<pre><code>## [1]  TRUE FALSE
+## [1] &quot;logical&quot;
+##  logi [1:2] TRUE FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t5 &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>)
+<span class="kw">show_type</span>(t5)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 1 2
+## 
+## [[2]]
+## [1] 2 3
+## 
+## [1] &quot;list&quot;
+## List of 2
+##  $ : int [1:2] 1 2
+##  $ : int [1:2] 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t6 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">col1 =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>), <span class="dt">col2 =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>])
+<span class="kw">show_type</span>(t6)</code></pre></div>
+<pre><code>##   col1 col2
+## 1    1    a
+## 2    2    b
+## 3    3    c
+## 4    4    d
+## 5    5    e
+## [1] &quot;list&quot;
+## &#39;data.frame&#39;:    5 obs. of  2 variables:
+##  $ col1: int  1 2 3 4 5
+##  $ col2: Factor w/ 5 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,..: 1 2 3 4 5</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resume-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["testbook.pdf", "testbook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
