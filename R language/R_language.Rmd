@@ -5,7 +5,7 @@ output:
     df_print: paged
 ---
 
-```{r}
+```{r setup, include=FALSE}
 library(knitr)
 knitr::opts_chunk$set(warning=FALSE, message=FALSE)
 ```
@@ -13,14 +13,19 @@ knitr::opts_chunk$set(warning=FALSE, message=FALSE)
 #R conference 2018
 
 by Emily Robinson (DataCamp) at the 2018 New York R Conference
-Les packages de l’écosystème tidyverse sont décrits dans le diagramme 1. Noter que leaflet ne fait pas partie
+Les packages de l'écosystème tidyverse sont dÃ©crits dans le diagramme 1. Noter que leaflet ne fait pas partie
 de tidyverse.
+
+```{r}
+library(tidyverse)
+tidyverse_packages()
+```
 
 ![data anlysis workflow (draw.io)](workflow.png)
 
 ##make a toy dataset
 
-```{r, results = 'asis'}
+```{r}
 library(tibble)
 df <- tribble(
 ~date, ~whatever, ~numstuff1, ~numstuff2, ~multi_value,
@@ -33,6 +38,7 @@ df
 ```
 
 Examine your NAs and empty values
+
 ```{r}
 library(purrr)
 df %>%
@@ -47,6 +53,7 @@ df
 ```
 
 ##Examine your numeric columns
+
 ```{r}
 library(skimr)
 df %>%
@@ -69,7 +76,7 @@ library(ggplot2)
 library(forcats)
 df %>%
 count(date) %>%
-mutate(date = fct_reorder(date, n)) %>% # ordonne les colonnes en ordre décroissant
+mutate(date = fct_reorder(date, n)) %>% # ordonne les colonnes en ordre dÃ©croissant
 ggplot(aes(x = date, y = n)) + geom_col() + coord_flip()
 ```
 
@@ -79,19 +86,21 @@ By Andy Nicholls, Richard Pugh, & Aimee Gott (first edition dec 2015)
 object types
 
 4 modes (fonction mode()):
-• numeric
-• character
-• boolean
-• complex
+
+- numeric
+- character
+- boolean
+- complex
 
 3 types (fonction class()):
-• vector (c’est le type de base) - attributes length et names
-• matrix/array - attribut dim
-• list
+
+- vector (c'est le type de base) - attributes length et names
+- matrix/array - attribut dim
+- list
 
 ##cut et split
 
-cut est utilisé pour classer des données numériques en facteur
+cut est utilisé pour classer des donnÃ©es numÃ©riques en facteur
 ```{r}
 numeric_matrix <- 1:100
 mycut1 <- cut(numeric_matrix, 3) # classifie les données selon trois classes de valeurs égales
@@ -102,7 +111,7 @@ head(mycut1)
 table(mycut1)
 ```
 
-On peut aussi couper selon des classes numériques spécifiques
+On peut aussi couper selon des classes numÃ©riques spÃ©cifiques
 ```{r}
 mycut2 <- cut(numeric_matrix, breaks = c(1, 10, 100), include.lowest = TRUE) # classes [1, 10], ]10, 100]
 head(mycut2)
@@ -114,6 +123,7 @@ table(mycut2)
 
 La fonction split permet de découper un ensemble selon des facteurs. Donc on peut combiner les fonctions
 cut et split pour décomposer un vecteur ou DF en liste de vecteurs/DF groupées par facteur.
+
 ```{r}
 mysplit_list <- split(numeric_matrix, mycut2)
 ```
