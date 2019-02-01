@@ -1,0 +1,146 @@
+---
+title: "text mining"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+```{r}
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, include=TRUE)
+```
+
+```{r}
+DATASET_DIRECTORY <- "/DATASETS/job_posting_cleansed/"
+```
+
+#Occurence of words
+
+This notebook provides a good example of how we can apply some basic functions from the package https://www.tidytextmining.com/tidytext.html in order to quantify and compare the text of job positions. Here we picked a sample of 10 job offers posted on the web for two type of positions: data analyst and data scientist. Some of the descriptions were only available in french therefore I transltated the others from english to french using google translate.
+
+```{r text_mining_setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(tidyverse) # tibble, stringr
+library(tidytext) # unnest_tokens, get_stopwords
+library(wordcloud) # draw a word cloud diagram
+```
+
+
+##Proof of concept
+
+**notes about Tidytext with french content**
+
+The Tidytext package does not implement directly all the features to interpret the ' character in french. This was about to be implemented but finally Julia decided to not move forward with the idea (https://github.com/juliasilge/tidytext/pull/89). As an alternative she propose to use string functions prior to call unnest_tokens. This is far from being perfect (because it split words like aujourd'hui, prud'hommes, etc) as explained by Colin Fay (https://github.com/juliasilge/tidytext/pull/89#issuecomment-354409107).
+
+Colin provides a package (https://github.com/ColinFay/proustr) which may implement something similar but I have not looked in depth.
+
+```{r text_mining_test}
+d <- tibble::tibble(txt = c("C'est l'arriere-cuisine. On s'y trouve. J'ai rdv aujourd'hui au tribunal des prud'hommes"))
+d <- d %>%
+  mutate(newtext = str_replace_all(txt, "[:punct:]", " ")) # issue with aujourd'hui & prod'hommes which are split
+output <- unnest_tokens(d, word, newtext)
+sw <- get_stopwords(language = "fr")
+output %>%
+  anti_join(sw)
+```
+
+La source de données originale se trouve à :
+
+"/Users/Yannick/Google Drive/Services Right Management/CV - Resumé/étape 1 - recherche du poste visé/CLEANSED"
+
+```{r text_mining_check_files}
+setwd(DATASET_DIRECTORY)
+file_list <- dir()
+file_list
+```
+
+##pattern matching to extract the position and the company name
+
+```{r text_mining_extract_company_and_position}
+resume_df <- data_frame(filename = str_to_lower(file_list))
+companyPattern = '- ([^-]*).txt$' # starting from the end of the string, look for the last '-' and following characters which contain the company name
+str_view(resume_df$filename, companyPattern) # check the matching pattern
+companies <- str_trim(str_match(resume_df$filename, companyPattern)[,2]) # matches the pattern and retrieve only the group capture
+positionPattern = '(scien|analy)' # maches any of the first word containing eitehr scien (for data science) or analy (for data analyst)
+str_view(resume_df$filename, positionPattern)
+positions <- str_match(resume_df$filename, positionPattern)[,2]
+```
+
+
+```{r text_mining_mockup_part1, eval=FALSE, include=FALSE}
+setwd(DATASET_DIRECTORY)
+text <- read_lines("Analyste - Science des données de fiabilité - Exo.txt")
+```
+
+```{r text_mining_mockup_part2, eval=FALSE, include=FALSE}
+text1 <- str_replace_all(text, "[:punct:]", " ")
+df <- data_frame(text = text1, company = "exo", position = "analyst")
+#toto <- str_c(out, collapse = "")
+output <- unnest_tokens(df, word, text)
+sw <- get_stopwords(language = "fr")
+output1 <- output %>%
+  anti_join(sw)
+```
+
+```{r text_mining_mockup_part3, eval=FALSE, include=FALSE}
+output1 %>%
+  count(word, sort = TRUE) %>%
+  filter(n > 2) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip()
+```
+##Ingest & transform all the files using tidytext
+
+```{r text_mining_ingest_and_transform}
+setwd(DATASET_DIRECTORY)
+stopWordsForFrench <- get_stopwords(language = "fr")
+for (i in 1:length(file_list)) {
+  temp_text <- read_lines(file_list[i])
+  text1 <- str_replace_all(temp_text, "[:punct:]", " ")
+  temp_df <- data_frame(text = text1, company = companies[i], position = positions[i])
+  output <- unnest_tokens(temp_df, word, text)
+  output1 <- output %>%
+    anti_join(stopWordsForFrench)
+  if (i == 1) df <- output1 else df <- rbind(df, output1)
+}
+```
+##Visualization - global
+
+```{r text_mining_visualisation_global_barchart}
+df %>%
+  count(word, sort = TRUE) %>%
+  filter(n > 10) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip()
+```
+
+```{r text_mining_visualization_global_nuage}
+df %>%
+  count(word) %>%
+  with(wordcloud(word, n, max.words = 20))
+```
+
+##Analysis by position Analyst vs Data scientist
+
+
+```{r}
+df %>%
+  group_by(position, word) %>%
+  summarise(n = n()) %>%
+  filter(n > 8) %>%
+  ungroup() %>% # if we do not do that the reorder function does not work
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = position)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~position, scales = "free_y") +
+  labs(y = "occurrences of the word in the job description",
+  x = NULL) +
+  coord_flip()
+```
