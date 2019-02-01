@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 3 running | R Notebooks in a book</title>
+  <meta name="description" content="Chapter 3 running | R Notebooks in a book">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 3 running | R Notebooks in a book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 running | R Notebooks in a book" />
+  
+  
+  
+
+<meta name="author" content="Yannick Le Corre">
+
+
+<meta name="date" content="2019-02-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="resume-analysis.html">
+<link rel="next" href="text-mining.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.3.1/str_view.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">My book of notebooks</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="r-language.html"><a href="r-language.html"><i class="fa fa-check"></i><b>1</b> R language</a><ul>
+<li class="chapter" data-level="1.1" data-path="r-language.html"><a href="r-language.html#r-conference-2018"><i class="fa fa-check"></i><b>1.1</b> R conference 2018</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="r-language.html"><a href="r-language.html#make-a-toy-dataset"><i class="fa fa-check"></i><b>1.1.1</b> make a toy dataset</a></li>
+<li class="chapter" data-level="1.1.2" data-path="r-language.html"><a href="r-language.html#examine-your-numeric-columns"><i class="fa fa-check"></i><b>1.1.2</b> Examine your numeric columns</a></li>
+<li class="chapter" data-level="1.1.3" data-path="r-language.html"><a href="r-language.html#tidy-columns-containing-colon-separated-values"><i class="fa fa-check"></i><b>1.1.3</b> Tidy columns containing colon separated values</a></li>
+<li class="chapter" data-level="1.1.4" data-path="r-language.html"><a href="r-language.html#plot-uncluttered-bar-charts"><i class="fa fa-check"></i><b>1.1.4</b> plot uncluttered bar charts</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="r-language.html"><a href="r-language.html#sams-teach-yourself-r"><i class="fa fa-check"></i><b>1.2</b> Sams Teach Yourself R</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="r-language.html"><a href="r-language.html#cut-et-split"><i class="fa fa-check"></i><b>1.2.1</b> cut et split</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="r-language.html"><a href="r-language.html#advanced-r"><i class="fa fa-check"></i><b>1.3</b> Advanced R</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="resume-analysis.html"><a href="resume-analysis.html"><i class="fa fa-check"></i><b>2</b> Resume_analysis</a></li>
+<li class="chapter" data-level="3" data-path="running.html"><a href="running.html"><i class="fa fa-check"></i><b>3</b> running</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="running.html"><a href="running.html#etude-du-schema"><i class="fa fa-check"></i><b>3.0.1</b> Étude du schéma</a></li>
+<li class="chapter" data-level="3.0.2" data-path="running.html"><a href="running.html#verification-que-lensemble-des-fichiers-refletent-cette-meme-structure"><i class="fa fa-check"></i><b>3.0.2</b> Vérification que l’ensemble des fichiers reflètent cette même structure</a></li>
+<li class="chapter" data-level="3.0.3" data-path="running.html"><a href="running.html#lecture-de-lensemble-des-donnees-format-tidy"><i class="fa fa-check"></i><b>3.0.3</b> Lecture de l’ensemble des données (format tidy)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>4</b> text mining</a><ul>
+<li class="chapter" data-level="4.1" data-path="text-mining.html"><a href="text-mining.html#occurence-of-words"><i class="fa fa-check"></i><b>4.1</b> Occurence of words</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="text-mining.html"><a href="text-mining.html#proof-of-concept"><i class="fa fa-check"></i><b>4.1.1</b> Proof of concept</a></li>
+<li class="chapter" data-level="4.1.2" data-path="text-mining.html"><a href="text-mining.html#pattern-matching-to-extract-the-position-and-the-company-name"><i class="fa fa-check"></i><b>4.1.2</b> pattern matching to extract the position and the company name</a></li>
+<li class="chapter" data-level="4.1.3" data-path="text-mining.html"><a href="text-mining.html#ingest-transform-all-the-files-using-tidytext"><i class="fa fa-check"></i><b>4.1.3</b> Ingest &amp; transform all the files using tidytext</a></li>
+<li class="chapter" data-level="4.1.4" data-path="text-mining.html"><a href="text-mining.html#visualization---global"><i class="fa fa-check"></i><b>4.1.4</b> Visualization - global</a></li>
+<li class="chapter" data-level="4.1.5" data-path="text-mining.html"><a href="text-mining.html#analysis-by-position-analyst-vs-data-scientist"><i class="fa fa-check"></i><b>4.1.5</b> Analysis by position Analyst vs Data scientist</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Notebooks in a book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="running" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> running</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">warning=</span><span class="ot">FALSE</span>, <span class="dt">message=</span><span class="ot">FALSE</span>, <span class="dt">include=</span><span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
+<span class="kw">library</span>(xml2)
+<span class="kw">library</span>(tidyverse)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DATASET_DIRECTORY &lt;-<span class="st"> &quot;/DATASETS/smashrun/RAW.unzipped&quot;</span>
+<span class="kw">setwd</span>(DATASET_DIRECTORY)
+file_list &lt;-<span class="st"> </span><span class="kw">dir</span>()</code></pre></div>
+<p>The raw data is located in the directory: <strong>/DATASETS/smashrun/RAW.unzipped</strong> and comprises <strong><span class="math inline">\(979\)</span></strong> files</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">testFileName &lt;-<span class="st"> </span>file_list[<span class="dv">1</span>]
+<span class="kw">setwd</span>(DATASET_DIRECTORY)
+out &lt;-<span class="st"> </span><span class="kw">readLines</span>(testFileName, <span class="dt">n=</span><span class="op">-</span><span class="dv">1</span>) <span class="co"># read all the lines of the file into a vector of characters</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(stringr)
+toto &lt;-<span class="st"> </span><span class="kw">str_c</span>(out, <span class="dt">collapse =</span> <span class="st">&quot;&quot;</span>) <span class="co"># concatenate all the lines into one line</span>
+test &lt;-<span class="st"> </span><span class="kw">read_xml</span>(toto, <span class="dt">as_html =</span> <span class="ot">FALSE</span>, <span class="dt">options =</span> <span class="kw">c</span>(<span class="st">&quot;NOBLANKS&quot;</span>,<span class="st">&quot;RECOVER&quot;</span>), <span class="dt">verbose=</span><span class="ot">TRUE</span>)</code></pre></div>
+<p>Validation against the XMLschema</p>
+<p>Here is the header of a sample file: <code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code> <code>&lt;TrainingCenterDatabase creator=&quot;Smashrun&quot;</code> <code>xsi:schemaLocation=&quot;http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2</code> <strong><code>http://www.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd&quot;</code></strong> <code>xmlns:ns5=&quot;http://www.garmin.com/xmlschemas/ActivityGoals/v1&quot;</code> <code>xmlns:ns3=&quot;http://www.garmin.com/xmlschemas/ActivityExtension/v2&quot;</code> <code>xmlns:ns2=&quot;http://www.garmin.com/xmlschemas/UserProfile/v2&quot;</code> <code>xmlns=&quot;http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2&quot;</code> <code>xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</code> <code>xmlns:ns4=&quot;http://www.garmin.com/xmlschemas/ProfileExtension/v1&quot;&gt;</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">schema &lt;-<span class="st"> </span><span class="kw">read_xml</span>(<span class="st">&quot;http://www.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd&quot;</span>)
+<span class="kw">xml_validate</span>(test, schema)</code></pre></div>
+<pre><code>## [1] FALSE
+## attr(,&quot;errors&quot;)
+## [1] &quot;Element &#39;{http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2}TrainingCenterDatabase&#39;, attribute &#39;creator&#39;: The attribute &#39;creator&#39; is not allowed.&quot;                                          
+## [2] &quot;Element &#39;{http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2}Intensity&#39;: This element is not expected. Expected is ( {http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2}Calories ).&quot;
+## [3] &quot;Element &#39;{http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2}Author&#39;: Missing child element(s). Expected is ( {http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2}LangID ).&quot;</code></pre>
+<p>On voit quelques écarts mais ce n’est pas un indicateur de mauvaise qualité des données (ie information manquante, érronée, etc…)</p>
+<div id="etude-du-schema" class="section level3">
+<h3><span class="header-section-number">3.0.1</span> Étude du schéma</h3>
+<p>L’emplacement du schéma à changé d’emplacement :</p>
+<p><code>yannick@debian:~$ curl https://www.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd</code> <code>&lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML 2.0//EN&quot;&gt;</code> <code>&lt;html&gt;&lt;head&gt;</code> <code>&lt;title&gt;301 Moved Permanently&lt;/title&gt;</code> <code>&lt;/head&gt;&lt;body&gt;</code> <code>&lt;h1&gt;Moved Permanently&lt;/h1&gt;</code> <code>&lt;p&gt;The document has moved &lt;a href=&quot;http://www8.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</code> <code>&lt;/body&gt;&lt;/html&gt;</code></p>
+<p>Il peut-être téléchargé via la nouvelle URL:</p>
+<p><code>yannick@debian:~$ curl https://www8.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Exract the root node form the xml file.
+rootnode &lt;-<span class="st"> </span><span class="kw">xml_root</span>(test)
+<span class="kw">mode</span>(rootnode)</code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(rootnode)</code></pre></div>
+<pre><code>## List of 2
+##  $ node:&lt;externalptr&gt; 
+##  $ doc :&lt;externalptr&gt; 
+##  - attr(*, &quot;class&quot;)= chr [1:2] &quot;xml_document&quot; &quot;xml_node&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Find number of nodes in the root.
+rootsize &lt;-<span class="st"> </span><span class="kw">xml_length</span>(rootnode)
+
+## Print the result.
+<span class="kw">print</span>(rootsize)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="figure">
+<img src="XML_structure1.png" alt="noeud racine" />
+<p class="caption">noeud racine</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">child1 &lt;-<span class="st"> </span><span class="kw">xml_child</span>(rootnode, <span class="dv">1</span>)
+<span class="kw">mode</span>(child1)</code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(child1)</code></pre></div>
+<pre><code>## List of 2
+##  $ node:&lt;externalptr&gt; 
+##  $ doc :&lt;externalptr&gt; 
+##  - attr(*, &quot;class&quot;)= chr &quot;xml_node&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">child1</code></pre></div>
+<pre><code>## {xml_node}
+## &lt;Activities&gt;
+## [1] &lt;Activity Sport=&quot;Running&quot;&gt;\n  &lt;Id&gt;2010-05-04T22:37:00&lt;/Id&gt;\n  &lt;Lap S ...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">child2 &lt;-<span class="st"> </span><span class="kw">xml_child</span>(rootnode, <span class="dv">2</span>)
+child2</code></pre></div>
+<pre><code>## {xml_node}
+## &lt;Author type=&quot;Application_t&quot;&gt;
+## [1] &lt;Name&gt;Smashrun&lt;/Name&gt;
+## [2] &lt;Build&gt;\n  &lt;Version&gt;\n    &lt;VersionMajor&gt;8&lt;/VersionMajor&gt;\n    &lt;Versi ...</code></pre>
+<p>Seuls les éléments Lap (1 Lap par activité) et Track (liste de geolocations) semblent être disponibles</p>
+<div class="figure">
+<img src="XML_structure2.png" alt="noeud Activities" />
+<p class="caption">noeud Activities</p>
+</div>
+</div>
+<div id="verification-que-lensemble-des-fichiers-refletent-cette-meme-structure" class="section level3">
+<h3><span class="header-section-number">3.0.2</span> Vérification que l’ensemble des fichiers reflètent cette même structure</h3>
+<p>Exploration des éléments <strong>/ (racine)</strong></p>
+<p>Le premier exemple montre un fichier contenant uniquement deux éléments (parmi d’autres tels que Folders, Workouts, Courses, Extensions):</p>
+<ul>
+<li>Author</li>
+<li>Activities</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(DATASET_DIRECTORY)
+##for (i in 1:length(file_list)) {
+##for (i in 1:10) {
+i &lt;-<span class="st"> </span><span class="dv">1</span>
+##  fileName &lt;- file_list[i]
+fileName &lt;-<span class="st"> &quot;smashrun-2017-09-30-11142058.tcx&quot;</span>
+  out &lt;-<span class="st"> </span><span class="kw">readLines</span>(fileName, <span class="dt">n=</span><span class="op">-</span><span class="dv">1</span>) <span class="co"># read all the lines of the file into a vector of characters</span>
+  out1 &lt;-<span class="st"> </span><span class="kw">str_c</span>(out, <span class="dt">collapse =</span> <span class="st">&quot;&quot;</span>) <span class="co"># concatenate all the lines into one line</span>
+  out2 &lt;-<span class="st"> </span><span class="kw">read_xml</span>(out1, <span class="dt">as_html =</span> <span class="ot">FALSE</span>, <span class="dt">options =</span> <span class="kw">c</span>(<span class="st">&quot;NOBLANKS&quot;</span>,<span class="st">&quot;RECOVER&quot;</span>), <span class="dt">verbose=</span><span class="ot">TRUE</span>)  
+  rootnode &lt;-<span class="st"> </span><span class="kw">xml_root</span>(out2)
+  rootsize &lt;-<span class="st"> </span><span class="kw">xml_length</span>(rootnode) <span class="co"># Find number of nodes in the root.</span>
+  <span class="cf">for</span> (ii <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>rootsize) {
+    child &lt;-<span class="st"> </span><span class="kw">xml_child</span>(rootnode, ii) <span class="co"># lit chaque élément disponible sous la racine du document XML</span>
+    name &lt;-<span class="st"> </span><span class="kw">xml_name</span>(child) <span class="co"># récupère le nom de l&#39;élément</span>
+    size &lt;-<span class="st"> </span><span class="kw">xml_length</span>(child) <span class="co"># ainsi que le nombre d&#39;éléments contenus</span>
+    rowDf &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">fileName =</span> fileName, <span class="dt">childName =</span> name, <span class="dt">childEntries =</span> size)
+    <span class="cf">if</span> (i <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;&amp;</span><span class="st"> </span>ii <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) df &lt;-<span class="st"> </span>rowDf <span class="cf">else</span> df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, rowDf)
+  }
+##}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(childName) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">min =</span> <span class="kw">min</span>(childEntries), <span class="dt">max =</span> <span class="kw">max</span>(childEntries))</code></pre></div>
+<pre><code>## # A tibble: 2 x 3
+##   childName    min   max
+##   &lt;fct&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1 Activities     1     1
+## 2 Author         2     2</code></pre>
+<p>Donc on voit que l’élément <strong>/Activities</strong> n’a jamais plus d’une occurrance d’activité dans nos données.</p>
+<p>Author à toujours 2 éléments : <strong>/Author/Name</strong> et <strong>/Author/Build</strong> correspondant à l’application SmashRun (pas vraiment d’interêt)</p>
+<p>Exploration de l’élément <strong>/Activities/Activity</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(DATASET_DIRECTORY)
+##for (i in 1:length(file_list)) {
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {
+##i &lt;- 1
+  fileName &lt;-<span class="st"> </span>file_list[i]
+##fileName &lt;- &quot;smashrun-2017-09-30-11142058.tcx&quot;
+  out &lt;-<span class="st"> </span><span class="kw">readLines</span>(fileName, <span class="dt">n=</span><span class="op">-</span><span class="dv">1</span>) <span class="co"># read all the lines of the file into a vector of characters</span>
+  out1 &lt;-<span class="st"> </span><span class="kw">str_c</span>(out, <span class="dt">collapse =</span> <span class="st">&quot;&quot;</span>) <span class="co"># concatenate all the lines into one line</span>
+  out2 &lt;-<span class="st"> </span><span class="kw">read_xml</span>(out1, <span class="dt">as_html =</span> <span class="ot">FALSE</span>, <span class="dt">options =</span> <span class="kw">c</span>(<span class="st">&quot;NOBLANKS&quot;</span>,<span class="st">&quot;RECOVER&quot;</span>), <span class="dt">verbose=</span><span class="ot">TRUE</span>)  
+  rootnode &lt;-<span class="st"> </span><span class="kw">xml_root</span>(out2)
+  rootsize &lt;-<span class="st"> </span><span class="kw">xml_length</span>(rootnode) <span class="co"># Find number of nodes in the root.</span>
+  <span class="cf">for</span> (ii <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>rootsize) {
+    childRoot &lt;-<span class="st"> </span><span class="kw">xml_child</span>(rootnode, ii) <span class="co"># lit chaque élément disponible sous la racine du document XML</span>
+    nameRoot &lt;-<span class="st"> </span><span class="kw">xml_name</span>(childRoot) <span class="co"># récupère le nom de l&#39;élément</span>
+    <span class="cf">if</span> (nameRoot <span class="op">==</span><span class="st"> &quot;Activities&quot;</span>) {
+        childActivity &lt;-<span class="st"> </span><span class="kw">xml_child</span>(childRoot) <span class="co"># on sait qu&#39;il n&#39;y a qu&#39;une seule entrée Activities par document</span>
+        sizeActivity &lt;-<span class="st"> </span><span class="kw">xml_length</span>(childActivity)
+        <span class="cf">for</span> (iii <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>sizeActivity) {
+          child &lt;-<span class="st"> </span><span class="kw">xml_child</span>(childActivity, iii) <span class="co"># lit chaque élément disponible de l&#39;élément Activity</span>
+          size &lt;-<span class="st"> </span><span class="kw">xml_length</span>(child) <span class="co"># ainsi que le nombre d&#39;éléments contenus</span>
+          name &lt;-<span class="st"> </span><span class="kw">xml_name</span>(child) <span class="co"># récupère le nom de l&#39;élément</span>
+          attributs &lt;-<span class="st"> </span><span class="kw">str_c</span>(<span class="st">&quot;&quot;</span>, <span class="kw">xml_attrs</span>(child))
+          <span class="co">#print(attributs)</span>
+          rowDf &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">fileName =</span> fileName, <span class="dt">childName =</span> name, <span class="dt">childEntries =</span> size, <span class="dt">childAttr =</span> attributs)
+          <span class="cf">if</span> (i <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">&amp;&amp;</span><span class="st"> </span>iii <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) dfActivities &lt;-<span class="st"> </span>rowDf <span class="cf">else</span> dfActivities &lt;-<span class="st"> </span><span class="kw">rbind</span>(dfActivities, rowDf)
+        }
+    }
+  }
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfActivities <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(fileName, childName) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(childName, fileName) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">sum</span>(n)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(childName) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">min =</span> <span class="kw">min</span>(n), <span class="dt">max =</span> <span class="kw">max</span>(n))</code></pre></div>
+<pre><code>## # A tibble: 3 x 3
+##   childName   min   max
+##   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;
+## 1 Id            1     1
+## 2 Lap           1    11
+## 3 Notes         1     1</code></pre>
+<p>Lorsqu’un Lap n’a qu’une seule occurrence il s’agit d’une saisie manuelle de l’entrainement et donc il ne devrait pas y avoir de tracking associé (élément /Activities/Activity/Lap/Track absent)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfActivities <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(childName <span class="op">==</span><span class="st"> &quot;Lap&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(fileName) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>() </code></pre></div>
+<pre><code>## # A tibble: 10 x 2
+##    fileName                             n
+##    &lt;fct&gt;                            &lt;int&gt;
+##  1 smashrun-2010-05-04-11092860.tcx     1
+##  2 smashrun-2010-05-06-11092861.tcx     9
+##  3 smashrun-2010-05-08-11092862.tcx     6
+##  4 smashrun-2010-05-10-11092863.tcx     1
+##  5 smashrun-2010-05-13-11092864.tcx     1
+##  6 smashrun-2010-05-15-11092865.tcx     4
+##  7 smashrun-2010-05-16-11092866.tcx     5
+##  8 smashrun-2010-05-18-11092867.tcx     1
+##  9 smashrun-2010-05-21-11092868.tcx     3
+## 10 smashrun-2010-05-23-11092869.tcx    11</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co">#filter(n == 1)</span></code></pre></div>
+<p>exploration du contenu des attributs pour les éléments vides <strong>/Activities/Activity/Id</strong> et <strong>/Activities/Activity/Notes</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfActivities <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(childName <span class="op">==</span><span class="st"> &quot;Notes&quot;</span> <span class="op">&amp;</span><span class="st"> </span>childAttr <span class="op">!=</span><span class="st"> &quot;&quot;</span>)</code></pre></div>
+<pre><code>## [1] fileName     childName    childEntries childAttr   
+## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfActivities <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(childName <span class="op">==</span><span class="st"> &quot;Id&quot;</span> <span class="op">&amp;</span><span class="st"> </span>childAttr <span class="op">!=</span><span class="st"> &quot;&quot;</span>)</code></pre></div>
+<pre><code>## [1] fileName     childName    childEntries childAttr   
+## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<p>Exploration de l’élément <strong>/Activities/Activity/Lap</strong></p>
+<div class="figure">
+<img src="AnalyseLap.png" alt="Lap(s) du fichier smashrun-2010-05-06-11092861.tcx" />
+<p class="caption">Lap(s) du fichier smashrun-2010-05-06-11092861.tcx</p>
+</div>
+<p>Il semble que, par défaut, un lap corresponde à 1 km et l’attribut Id correspond par défaut au ts de début du lap disponible au niveau de l’attribut StartTime de l’élément Lap.</p>
+<p>Exploration de l’élément <strong>/Activities/Activity/Lap/Track</strong></p>
+</div>
+<div id="lecture-de-lensemble-des-donnees-format-tidy" class="section level3">
+<h3><span class="header-section-number">3.0.3</span> Lecture de l’ensemble des données (format tidy)</h3>
+<p>Dans un premier temps on</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="resume-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="text-mining.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

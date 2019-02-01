@@ -1,0 +1,19 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+cars <- as_tibble(mtcars)
+```
+
+```{r}
+df <- cars %>%
+  group_by(cyl) %>%
+  summarise_all(mean)
+df
+```

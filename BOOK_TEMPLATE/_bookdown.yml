@@ -1,0 +1,8 @@
+new_session: false
+book_filename: "testbook"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+output_dir: "docs"
+rmd_subdir: no  

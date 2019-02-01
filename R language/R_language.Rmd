@@ -5,15 +5,15 @@ output:
     df_print: paged
 ---
 
-```{r setup, include=FALSE}
+```{r R_setup, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, include=TRUE)
 ```
 
 #R conference 2018
 
 by Emily Robinson (DataCamp) at the 2018 New York R Conference
-Les packages de l'écosystème tidyverse sont dÃ©crits dans le diagramme 1. Noter que leaflet ne fait pas partie
+Les packages de l'écosystème tidyverse sont décrits dans le diagramme 1. Noter que leaflet ne fait pas partie
 de tidyverse.
 
 ```{r}
@@ -76,7 +76,7 @@ library(ggplot2)
 library(forcats)
 df %>%
 count(date) %>%
-mutate(date = fct_reorder(date, n)) %>% # ordonne les colonnes en ordre dÃ©croissant
+mutate(date = fct_reorder(date, n)) %>% # ordonne les colonnes en ordre décroissant
 ggplot(aes(x = date, y = n)) + geom_col() + coord_flip()
 ```
 
@@ -139,7 +139,7 @@ split(df, cut(df$value, 3))
 
 The book [Advanced R](https://adv-r.hadley.nz/) explains a lot of fundamental aspects of the R language.
 
-The library **lobstr** allows to check the size of a variable 
+The library **lobstr** allows to check the size of a variable
 
 ```{r}
 library(lobstr)

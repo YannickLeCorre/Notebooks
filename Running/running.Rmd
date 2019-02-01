@@ -1,13 +1,16 @@
 ---
 title: "running"
 output:
-  html_notebook: default
   html_document:
     df_print: paged
+  html_notebook: default
 ---
 
-```{r setup}
-knitr::opts_chunk$set(warning=FALSE, message=FALSE, include=FALSE)
+```{r}
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, include=TRUE)
+```
+
+```{r running_setup}
 library(knitr)
 library(xml2)
 library(tidyverse)
@@ -28,7 +31,7 @@ out <- readLines(testFileName, n=-1) # read all the lines of the file into a vec
 ```
 
 
-```{r mockup1}
+```{r running_mockup1}
 library(stringr)
 toto <- str_c(out, collapse = "") # concatenate all the lines into one line
 test <- read_xml(toto, as_html = FALSE, options = c("NOBLANKS","RECOVER"), verbose=TRUE)
@@ -47,7 +50,7 @@ Here is the header of a sample file:
 `   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ` `xmlns:ns4="http://www.garmin.com/xmlschemas/ProfileExtension/v1">`
 
 
-```{r mockup2}
+```{r running_mockup2}
 schema <- read_xml("http://www.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd")
 xml_validate(test, schema)
 ```
@@ -72,7 +75,7 @@ Il peut-être téléchargé via la nouvelle URL:
 `yannick@debian:~$ curl https://www8.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd`
 
 
-```{r mockup3}
+```{r running_mockup3}
 # Exract the root node form the xml file.
 rootnode <- xml_root(test)
 mode(rootnode)
@@ -88,14 +91,14 @@ print(rootsize)
 ![noeud racine](XML_structure1.png)
 
 
-```{r mockup4}
+```{r running_mockup4}
 child1 <- xml_child(rootnode, 1)
 mode(child1)
 str(child1)
 child1
 ```
 
-```{r mockup5}
+```{r running_mockup5}
 child2 <- xml_child(rootnode, 2)
 child2
 ```
@@ -113,7 +116,7 @@ Le premier exemple montre un fichier contenant uniquement deux éléments (parmi
 - Author
 - Activities
 
-```{r checkDataStructure1}
+```{r running_checkDataStructure1}
 setwd(DATASET_DIRECTORY)
 #for (i in 1:length(file_list)) {
 #for (i in 1:10) {
@@ -135,7 +138,7 @@ fileName <- "smashrun-2017-09-30-11142058.tcx"
 #}
 ```
 
-```{r checkDataStructure_summary1, include=TRUE}
+```{r running_checkDataStructure_summary1, include=TRUE}
 df %>%
   group_by(childName) %>%
   summarise(min = min(childEntries), max = max(childEntries))
@@ -147,7 +150,7 @@ Author à toujours 2 éléments : **/Author/Name** et **/Author/Build** correspo
 
 Exploration de l'élément **/Activities/Activity**
 
-```{r checkDataStructure2}
+```{r running_checkDataStructure2}
 setwd(DATASET_DIRECTORY)
 #for (i in 1:length(file_list)) {
 for (i in 1:10) {
@@ -180,7 +183,7 @@ for (i in 1:10) {
 ```
 
 
-```{r checkDataStructure_summary2a, include=TRUE}
+```{r running_checkDataStructure_summary2a, include=TRUE}
 dfActivities %>%
   group_by(fileName, childName) %>%
   summarise(n = n()) %>%
@@ -192,7 +195,7 @@ dfActivities %>%
 
 Lorsqu'un Lap n'a qu'une seule occurrence il s'agit d'une saisie manuelle de l'entrainement et donc il ne devrait pas y avoir de tracking associé (élément /Activities/Activity/Lap/Track absent)
 
-```{r checkDataStructure_summary2b, include=TRUE}
+```{r running_checkDataStructure_summary2b, include=TRUE}
 dfActivities %>%
   filter(childName == "Lap") %>%
   group_by(fileName) %>%
@@ -204,12 +207,12 @@ dfActivities %>%
 
 exploration du contenu des attributs pour les éléments vides **/Activities/Activity/Id** et **/Activities/Activity/Notes**
 
-```{r checkDataStructure_summary2c, include=TRUE}
+```{r running_checkDataStructure_summary2c, include=TRUE}
 dfActivities %>%
   filter(childName == "Notes" & childAttr != "")
 ```
 
-```{r checkDataStructure_summary2d, include=TRUE}
+```{r running_checkDataStructure_summary2d, include=TRUE}
 dfActivities %>%
   filter(childName == "Id" & childAttr != "")
 ```

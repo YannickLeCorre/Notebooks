@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 1 R | R Notebooks in a book</title>
-  <meta name="description" content="Chapter 1 R | R Notebooks in a book">
+  <title>Chapter 1 R language | R Notebooks in a book</title>
+  <meta name="description" content="Chapter 1 R language | R Notebooks in a book">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 1 R | R Notebooks in a book" />
+  <meta property="og:title" content="Chapter 1 R language | R Notebooks in a book" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 R | R Notebooks in a book" />
+  <meta name="twitter:title" content="Chapter 1 R language | R Notebooks in a book" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Yannick Le Corre">
 
 
-<meta name="date" content="2018-12-31">
+<meta name="date" content="2019-02-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -48,6 +48,9 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.3.1/str_view.js"></script>
 
 
 <style type="text/css">
@@ -105,19 +108,33 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>1</b> R</a><ul>
-<li class="chapter" data-level="1.1" data-path="r.html"><a href="r.html#conference-2018"><i class="fa fa-check"></i><b>1.1</b> conference 2018</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="r.html"><a href="r.html#make-a-toy-dataset"><i class="fa fa-check"></i><b>1.1.1</b> make a toy dataset</a></li>
-<li class="chapter" data-level="1.1.2" data-path="r.html"><a href="r.html#examine-your-numeric-columns"><i class="fa fa-check"></i><b>1.1.2</b> Examine your numeric columns</a></li>
-<li class="chapter" data-level="1.1.3" data-path="r.html"><a href="r.html#tidy-columns-containing-colon-separated-values"><i class="fa fa-check"></i><b>1.1.3</b> Tidy columns containing colon separated values</a></li>
-<li class="chapter" data-level="1.1.4" data-path="r.html"><a href="r.html#plot-uncluttered-bar-charts"><i class="fa fa-check"></i><b>1.1.4</b> plot uncluttered bar charts</a></li>
+<li class="chapter" data-level="1" data-path="r-language.html"><a href="r-language.html"><i class="fa fa-check"></i><b>1</b> R language</a><ul>
+<li class="chapter" data-level="1.1" data-path="r-language.html"><a href="r-language.html#r-conference-2018"><i class="fa fa-check"></i><b>1.1</b> R conference 2018</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="r-language.html"><a href="r-language.html#make-a-toy-dataset"><i class="fa fa-check"></i><b>1.1.1</b> make a toy dataset</a></li>
+<li class="chapter" data-level="1.1.2" data-path="r-language.html"><a href="r-language.html#examine-your-numeric-columns"><i class="fa fa-check"></i><b>1.1.2</b> Examine your numeric columns</a></li>
+<li class="chapter" data-level="1.1.3" data-path="r-language.html"><a href="r-language.html#tidy-columns-containing-colon-separated-values"><i class="fa fa-check"></i><b>1.1.3</b> Tidy columns containing colon separated values</a></li>
+<li class="chapter" data-level="1.1.4" data-path="r-language.html"><a href="r-language.html#plot-uncluttered-bar-charts"><i class="fa fa-check"></i><b>1.1.4</b> plot uncluttered bar charts</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="r.html"><a href="r.html#sams-teach-yourself-r"><i class="fa fa-check"></i><b>1.2</b> Sams Teach Yourself R</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="r.html"><a href="r.html#cut-et-split"><i class="fa fa-check"></i><b>1.2.1</b> cut et split</a></li>
+<li class="chapter" data-level="1.2" data-path="r-language.html"><a href="r-language.html#sams-teach-yourself-r"><i class="fa fa-check"></i><b>1.2</b> Sams Teach Yourself R</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="r-language.html"><a href="r-language.html#cut-et-split"><i class="fa fa-check"></i><b>1.2.1</b> cut et split</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="r.html"><a href="r.html#advanced-r"><i class="fa fa-check"></i><b>1.3</b> Advanced R</a></li>
+<li class="chapter" data-level="1.3" data-path="r-language.html"><a href="r-language.html#advanced-r"><i class="fa fa-check"></i><b>1.3</b> Advanced R</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="resume-analysis.html"><a href="resume-analysis.html"><i class="fa fa-check"></i><b>2</b> Resume analysis</a></li>
+<li class="chapter" data-level="2" data-path="resume-analysis.html"><a href="resume-analysis.html"><i class="fa fa-check"></i><b>2</b> Resume_analysis</a></li>
+<li class="chapter" data-level="3" data-path="running.html"><a href="running.html"><i class="fa fa-check"></i><b>3</b> running</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="running.html"><a href="running.html#etude-du-schema"><i class="fa fa-check"></i><b>3.0.1</b> Étude du schéma</a></li>
+<li class="chapter" data-level="3.0.2" data-path="running.html"><a href="running.html#verification-que-lensemble-des-fichiers-refletent-cette-meme-structure"><i class="fa fa-check"></i><b>3.0.2</b> Vérification que l’ensemble des fichiers reflètent cette même structure</a></li>
+<li class="chapter" data-level="3.0.3" data-path="running.html"><a href="running.html#lecture-de-lensemble-des-donnees-format-tidy"><i class="fa fa-check"></i><b>3.0.3</b> Lecture de l’ensemble des données (format tidy)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>4</b> text mining</a><ul>
+<li class="chapter" data-level="4.1" data-path="text-mining.html"><a href="text-mining.html#occurence-of-words"><i class="fa fa-check"></i><b>4.1</b> Occurence of words</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="text-mining.html"><a href="text-mining.html#proof-of-concept"><i class="fa fa-check"></i><b>4.1.1</b> Proof of concept</a></li>
+<li class="chapter" data-level="4.1.2" data-path="text-mining.html"><a href="text-mining.html#pattern-matching-to-extract-the-position-and-the-company-name"><i class="fa fa-check"></i><b>4.1.2</b> pattern matching to extract the position and the company name</a></li>
+<li class="chapter" data-level="4.1.3" data-path="text-mining.html"><a href="text-mining.html#ingest-transform-all-the-files-using-tidytext"><i class="fa fa-check"></i><b>4.1.3</b> Ingest &amp; transform all the files using tidytext</a></li>
+<li class="chapter" data-level="4.1.4" data-path="text-mining.html"><a href="text-mining.html#visualization---global"><i class="fa fa-check"></i><b>4.1.4</b> Visualization - global</a></li>
+<li class="chapter" data-level="4.1.5" data-path="text-mining.html"><a href="text-mining.html#analysis-by-position-analyst-vs-data-scientist"><i class="fa fa-check"></i><b>4.1.5</b> Analysis by position Analyst vs Data scientist</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -138,13 +155,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> R</h1>
-<div id="conference-2018" class="section level2">
-<h2><span class="header-section-number">1.1</span> conference 2018</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
-knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">warning=</span><span class="ot">FALSE</span>, <span class="dt">message=</span><span class="ot">FALSE</span>)</code></pre></div>
+<div id="r-language" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> R language</h1>
+<div id="r-conference-2018" class="section level2">
+<h2><span class="header-section-number">1.1</span> R conference 2018</h2>
 <p>by Emily Robinson (DataCamp) at the 2018 New York R Conference Les packages de l’écosystème tidyverse sont décrits dans le diagramme 1. Noter que leaflet ne fait pas partie de tidyverse.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">tidyverse_packages</span>()</code></pre></div>
+<pre><code>##  [1] &quot;broom&quot;       &quot;cli&quot;         &quot;crayon&quot;      &quot;dplyr&quot;       &quot;dbplyr&quot;     
+##  [6] &quot;forcats&quot;     &quot;ggplot2&quot;     &quot;haven&quot;       &quot;hms&quot;         &quot;httr&quot;       
+## [11] &quot;jsonlite&quot;    &quot;lubridate&quot;   &quot;magrittr&quot;    &quot;modelr&quot;      &quot;purrr&quot;      
+## [16] &quot;readr&quot;       &quot;readxl\n(&gt;=&quot; &quot;reprex&quot;      &quot;rlang&quot;       &quot;rstudioapi&quot; 
+## [21] &quot;rvest&quot;       &quot;stringr&quot;     &quot;tibble&quot;      &quot;tidyr&quot;       &quot;xml2&quot;       
+## [26] &quot;tidyverse&quot;</code></pre>
 <div class="figure">
 <img src="workflow.png" alt="data anlysis workflow (draw.io)" />
 <p class="caption">data anlysis workflow (draw.io)</p>
@@ -197,7 +220,7 @@ df <span class="op">%&gt;%</span>
 ##  n obs: 4 
 ##  n variables: 3 
 ## 
-## -- Variable type:numeric -------------------------------------------------------------------------------------------------------------------
+## -- Variable type:numeric ----------------------------------------------------------
 ##   variable missing complete n mean   sd  p0  p25  p50 p75 p100     hist
 ##  numstuff1       1        3 4 3    2    1   2    3    4    5   &lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;
 ##  numstuff2       1        3 4 2.67 0.58 2   2.5  3    3    3   &lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;
@@ -225,11 +248,22 @@ df <span class="op">%&gt;%</span>
 <div id="sams-teach-yourself-r" class="section level2">
 <h2><span class="header-section-number">1.2</span> Sams Teach Yourself R</h2>
 <p>By Andy Nicholls, Richard Pugh, &amp; Aimee Gott (first edition dec 2015) object types</p>
-<p>4 modes (fonction mode()): • numeric • character • boolean • complex</p>
-<p>3 types (fonction class()): • vector (c’est le type de base) - attributes length et names • matrix/array - attribut dim • list</p>
+<p>4 modes (fonction mode()):</p>
+<ul>
+<li>numeric</li>
+<li>character</li>
+<li>boolean</li>
+<li>complex</li>
+</ul>
+<p>3 types (fonction class()):</p>
+<ul>
+<li>vector (c’est le type de base) - attributes length et names</li>
+<li>matrix/array - attribut dim</li>
+<li>list</li>
+</ul>
 <div id="cut-et-split" class="section level3">
 <h3><span class="header-section-number">1.2.1</span> cut et split</h3>
-<p>cut est utilisé pour classer des données numériques en facteur</p>
+<p>cut est utilisé pour classer des donnÃ©es numÃ©riques en facteur</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">numeric_matrix &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span>
 mycut1 &lt;-<span class="st"> </span><span class="kw">cut</span>(numeric_matrix, <span class="dv">3</span>) <span class="co"># classifie les données selon trois classes de valeurs égales</span>
 <span class="kw">head</span>(mycut1)</code></pre></div>
@@ -239,7 +273,7 @@ mycut1 &lt;-<span class="st"> </span><span class="kw">cut</span>(numeric_matrix,
 <pre><code>## mycut1
 ## (0.901,34]    (34,67]   (67,100] 
 ##         34         33         33</code></pre>
-<p>On peut aussi couper selon des classes numériques spécifiques</p>
+<p>On peut aussi couper selon des classes numÃ©riques spÃ©cifiques</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mycut2 &lt;-<span class="st"> </span><span class="kw">cut</span>(numeric_matrix, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>), <span class="dt">include.lowest =</span> <span class="ot">TRUE</span>) <span class="co"># classes [1, 10], ]10, 100]</span>
 <span class="kw">head</span>(mycut2)</code></pre></div>
 <pre><code>## [1] [1,10] [1,10] [1,10] [1,10] [1,10] [1,10]
@@ -253,114 +287,114 @@ mycut1 &lt;-<span class="st"> </span><span class="kw">cut</span>(numeric_matrix,
 <p>la fonction split fonctionne aussi sur des DF</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">value =</span> <span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>, <span class="dt">size =</span> <span class="dv">100</span>), <span class="dt">whatever =</span> LETTERS[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(LETTERS), <span class="dt">size =</span> <span class="dv">100</span>, <span class="dt">replace=</span><span class="ot">TRUE</span>)])
 <span class="kw">split</span>(df, <span class="kw">cut</span>(df<span class="op">$</span>value, <span class="dv">3</span>))</code></pre></div>
-<pre><code>## $`(3.03,329]`
-##    value whatever
-## 2     95        M
-## 5    219        I
-## 7    306        I
-## 9    158        E
-## 15   270        S
-## 17   276        S
-## 26   237        M
-## 29   206        O
-## 30   300        R
-## 34   194        J
-## 35   243        R
-## 37   149        N
-## 38   117        M
-## 42   173        O
-## 44   207        R
-## 46   303        I
-## 56   314        R
-## 58    40        A
-## 63    42        B
-## 65   203        K
-## 67   112        C
-## 68    43        C
-## 71   132        F
-## 74     4        B
-## 83     7        I
-## 85   269        B
-## 88   153        P
-## 92    22        D
-## 93   138        M
-## 97   316        B
-## 
-## $`(329,653]`
-##    value whatever
-## 1    366        O
-## 3    496        A
-## 8    603        G
-## 10   632        R
-## 12   430        I
-## 13   411        O
-## 18   611        O
-## 20   481        Q
-## 25   340        A
-## 28   634        X
-## 32   450        R
-## 33   438        M
-## 47   610        U
-## 48   619        G
-## 51   423        I
-## 54   530        T
-## 62   466        P
-## 64   485        W
-## 66   574        U
-## 69   465        S
-## 73   594        J
-## 79   384        A
-## 81   420        R
-## 82   525        A
-## 87   424        X
-## 89   376        X
-## 90   391        D
-## 91   469        S
-## 94   352        Q
-## 96   542        Z
-## 98   584        G
-## 99   346        W
-## 
-## $`(653,979]`
+<pre><code>## $`(7.01,339]`
 ##     value whatever
-## 4     729        M
-## 6     711        W
-## 11    710        Z
-## 14    665        A
-## 16    796        X
-## 19    749        D
-## 21    971        R
-## 22    809        F
-## 23    798        S
-## 24    677        K
-## 27    680        A
-## 31    675        U
-## 36    705        W
-## 39    801        N
-## 40    779        N
-## 41    935        Y
-## 43    730        S
-## 45    663        W
-## 49    978        R
-## 50    773        N
-## 52    934        O
-## 53    972        T
-## 55    884        C
-## 57    973        Y
-## 59    851        H
-## 60    664        G
-## 61    831        V
-## 70    887        A
-## 72    898        L
-## 75    930        E
-## 76    765        S
-## 77    956        W
-## 78    689        D
-## 80    920        J
-## 84    861        C
-## 86    781        K
-## 95    679        F
-## 100   739        H</code></pre>
+## 2     255        Y
+## 5     310        X
+## 6     274        E
+## 9     182        T
+## 16    283        A
+## 18    208        W
+## 26      8        Q
+## 31     69        W
+## 32    188        L
+## 34    285        Y
+## 35     55        M
+## 36     45        K
+## 37    306        Z
+## 40     65        A
+## 43    103        H
+## 44    125        I
+## 46    234        K
+## 52     14        Y
+## 54     71        S
+## 57     99        K
+## 60     21        G
+## 66    296        D
+## 68    176        G
+## 69    170        V
+## 71     57        O
+## 76    335        I
+## 82    200        W
+## 84     68        N
+## 86     59        P
+## 87    100        C
+## 88    185        H
+## 91     89        K
+## 92     11        N
+## 96    268        M
+## 100    63        C
+## 
+## $`(339,669]`
+##    value whatever
+## 1    512        N
+## 4    669        K
+## 7    412        R
+## 12   593        F
+## 17   467        D
+## 20   435        A
+## 23   352        H
+## 24   339        V
+## 27   577        S
+## 29   664        F
+## 30   646        P
+## 39   553        V
+## 47   617        G
+## 49   571        A
+## 55   456        M
+## 56   369        S
+## 59   661        N
+## 63   592        D
+## 65   652        T
+## 72   645        E
+## 77   575        O
+## 78   413        F
+## 81   472        V
+## 83   432        F
+## 85   598        C
+## 90   510        F
+## 95   551        Z
+## 98   499        K
+## 
+## $`(669,1e+03]`
+##    value whatever
+## 3    937        A
+## 8    805        P
+## 10   811        A
+## 11   711        P
+## 13  1000        D
+## 14   974        Y
+## 15   917        V
+## 19   782        P
+## 21   900        R
+## 22   913        G
+## 25   978        D
+## 28   705        D
+## 33   976        P
+## 38   723        Q
+## 41   942        O
+## 42   732        A
+## 45   987        C
+## 48   674        Z
+## 50   721        K
+## 51   983        O
+## 53   794        T
+## 58   710        U
+## 61   877        U
+## 62   848        A
+## 64   908        W
+## 67   783        O
+## 70   730        H
+## 73   726        G
+## 74   969        L
+## 75   874        U
+## 79   952        P
+## 80   970        E
+## 89   881        T
+## 93   719        Z
+## 94   745        X
+## 97   670        S
+## 99   941        U</code></pre>
 </div>
 </div>
 <div id="advanced-r" class="section level2">
@@ -461,7 +495,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["testbook.pdf", "testbook.epub"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }
@@ -469,6 +503,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

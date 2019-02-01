@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 4 text mining | R Notebooks in a book</title>
+  <meta name="description" content="Chapter 4 text mining | R Notebooks in a book">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 4 text mining | R Notebooks in a book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 text mining | R Notebooks in a book" />
+  
+  
+  
+
+<meta name="author" content="Yannick Le Corre">
+
+
+<meta name="date" content="2019-02-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="running.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.3.1/str_view.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">My book of notebooks</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="r-language.html"><a href="r-language.html"><i class="fa fa-check"></i><b>1</b> R language</a><ul>
+<li class="chapter" data-level="1.1" data-path="r-language.html"><a href="r-language.html#r-conference-2018"><i class="fa fa-check"></i><b>1.1</b> R conference 2018</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="r-language.html"><a href="r-language.html#make-a-toy-dataset"><i class="fa fa-check"></i><b>1.1.1</b> make a toy dataset</a></li>
+<li class="chapter" data-level="1.1.2" data-path="r-language.html"><a href="r-language.html#examine-your-numeric-columns"><i class="fa fa-check"></i><b>1.1.2</b> Examine your numeric columns</a></li>
+<li class="chapter" data-level="1.1.3" data-path="r-language.html"><a href="r-language.html#tidy-columns-containing-colon-separated-values"><i class="fa fa-check"></i><b>1.1.3</b> Tidy columns containing colon separated values</a></li>
+<li class="chapter" data-level="1.1.4" data-path="r-language.html"><a href="r-language.html#plot-uncluttered-bar-charts"><i class="fa fa-check"></i><b>1.1.4</b> plot uncluttered bar charts</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="r-language.html"><a href="r-language.html#sams-teach-yourself-r"><i class="fa fa-check"></i><b>1.2</b> Sams Teach Yourself R</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="r-language.html"><a href="r-language.html#cut-et-split"><i class="fa fa-check"></i><b>1.2.1</b> cut et split</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="r-language.html"><a href="r-language.html#advanced-r"><i class="fa fa-check"></i><b>1.3</b> Advanced R</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="resume-analysis.html"><a href="resume-analysis.html"><i class="fa fa-check"></i><b>2</b> Resume_analysis</a></li>
+<li class="chapter" data-level="3" data-path="running.html"><a href="running.html"><i class="fa fa-check"></i><b>3</b> running</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="running.html"><a href="running.html#etude-du-schema"><i class="fa fa-check"></i><b>3.0.1</b> Étude du schéma</a></li>
+<li class="chapter" data-level="3.0.2" data-path="running.html"><a href="running.html#verification-que-lensemble-des-fichiers-refletent-cette-meme-structure"><i class="fa fa-check"></i><b>3.0.2</b> Vérification que l’ensemble des fichiers reflètent cette même structure</a></li>
+<li class="chapter" data-level="3.0.3" data-path="running.html"><a href="running.html#lecture-de-lensemble-des-donnees-format-tidy"><i class="fa fa-check"></i><b>3.0.3</b> Lecture de l’ensemble des données (format tidy)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>4</b> text mining</a><ul>
+<li class="chapter" data-level="4.1" data-path="text-mining.html"><a href="text-mining.html#occurence-of-words"><i class="fa fa-check"></i><b>4.1</b> Occurence of words</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="text-mining.html"><a href="text-mining.html#proof-of-concept"><i class="fa fa-check"></i><b>4.1.1</b> Proof of concept</a></li>
+<li class="chapter" data-level="4.1.2" data-path="text-mining.html"><a href="text-mining.html#pattern-matching-to-extract-the-position-and-the-company-name"><i class="fa fa-check"></i><b>4.1.2</b> pattern matching to extract the position and the company name</a></li>
+<li class="chapter" data-level="4.1.3" data-path="text-mining.html"><a href="text-mining.html#ingest-transform-all-the-files-using-tidytext"><i class="fa fa-check"></i><b>4.1.3</b> Ingest &amp; transform all the files using tidytext</a></li>
+<li class="chapter" data-level="4.1.4" data-path="text-mining.html"><a href="text-mining.html#visualization---global"><i class="fa fa-check"></i><b>4.1.4</b> Visualization - global</a></li>
+<li class="chapter" data-level="4.1.5" data-path="text-mining.html"><a href="text-mining.html#analysis-by-position-analyst-vs-data-scientist"><i class="fa fa-check"></i><b>4.1.5</b> Analysis by position Analyst vs Data scientist</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Notebooks in a book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="text-mining" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> text mining</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">warning=</span><span class="ot">FALSE</span>, <span class="dt">message=</span><span class="ot">FALSE</span>, <span class="dt">include=</span><span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DATASET_DIRECTORY &lt;-<span class="st"> &quot;/DATASETS/job_posting_cleansed/&quot;</span></code></pre></div>
+<div id="occurence-of-words" class="section level2">
+<h2><span class="header-section-number">4.1</span> Occurence of words</h2>
+<p>This notebook provides a good example of how we can apply some basic functions from the package <a href="https://www.tidytextmining.com/tidytext.html" class="uri">https://www.tidytextmining.com/tidytext.html</a> in order to quantify and compare the text of job positions. Here we picked a sample of 10 job offers posted on the web for two type of positions: data analyst and data scientist. Some of the descriptions were only available in french therefore I transltated the others from english to french using google translate.</p>
+<div id="proof-of-concept" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Proof of concept</h3>
+<p><strong>notes about Tidytext with french content</strong></p>
+<p>The Tidytext package does not implement directly all the features to interpret the ’ character in french. This was about to be implemented but finally Julia decided to not move forward with the idea (<a href="https://github.com/juliasilge/tidytext/pull/89" class="uri">https://github.com/juliasilge/tidytext/pull/89</a>). As an alternative she propose to use string functions prior to call unnest_tokens. This is far from being perfect (because it split words like aujourd’hui, prud’hommes, etc) as explained by Colin Fay (<a href="https://github.com/juliasilge/tidytext/pull/89#issuecomment-354409107" class="uri">https://github.com/juliasilge/tidytext/pull/89#issuecomment-354409107</a>).</p>
+<p>Colin provides a package (<a href="https://github.com/ColinFay/proustr" class="uri">https://github.com/ColinFay/proustr</a>) which may implement something similar but I have not looked in depth.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(<span class="dt">txt =</span> <span class="kw">c</span>(<span class="st">&quot;C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au tribunal des prud&#39;hommes&quot;</span>))
+d &lt;-<span class="st"> </span>d <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">newtext =</span> <span class="kw">str_replace_all</span>(txt, <span class="st">&quot;[:punct:]&quot;</span>, <span class="st">&quot; &quot;</span>)) <span class="co"># issue with aujourd&#39;hui &amp; prod&#39;hommes which are split</span>
+output &lt;-<span class="st"> </span><span class="kw">unnest_tokens</span>(d, word, newtext)
+sw &lt;-<span class="st"> </span><span class="kw">get_stopwords</span>(<span class="dt">language =</span> <span class="st">&quot;fr&quot;</span>)
+output <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">anti_join</span>(sw)</code></pre></div>
+<pre><code>## # A tibble: 9 x 2
+##   txt                                                               word   
+##   &lt;chr&gt;                                                             &lt;chr&gt;  
+## 1 C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au ~ arriere
+## 2 C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au ~ cuisine
+## 3 C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au ~ trouve 
+## 4 C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au ~ rdv    
+## 5 C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au ~ aujourd
+## 6 C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au ~ hui    
+## 7 C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au ~ tribun~
+## 8 C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au ~ prud   
+## 9 C&#39;est l&#39;arriere-cuisine. On s&#39;y trouve. J&#39;ai rdv aujourd&#39;hui au ~ hommes</code></pre>
+<p>La source de données originale se trouve à :</p>
+<p>“/Users/Yannick/Google Drive/Services Right Management/CV - Resumé/étape 1 - recherche du poste visé/CLEANSED”</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(DATASET_DIRECTORY)
+file_list &lt;-<span class="st"> </span><span class="kw">dir</span>()
+file_list</code></pre></div>
+<pre><code>##  [1] &quot;Analyste - Science des données de fiabilité - Exo.txt&quot;               
+##  [2] &quot;Analyste des données - Scientifique des données - FinDev Canada.txt&quot; 
+##  [3] &quot;Analyste données clients - Aimia.txt&quot;                                
+##  [4] &quot;Data Analyst - MindGeek .txt&quot;                                        
+##  [5] &quot;Data Scientist - ExPretio.txt&quot;                                       
+##  [6] &quot;Marketing Analyst - DavidsTea.txt&quot;                                   
+##  [7] &quot;Scientifique de données - Aviva.txt&quot;                                 
+##  [8] &quot;scientifique des données - Sun Life Financial.txt&quot;                   
+##  [9] &quot;Scientifiques de données – Analytique Clients - Banque Nationale.txt&quot;
+## [10] &quot;Scientifiques des données juniors - Ericsson.txt&quot;</code></pre>
+</div>
+<div id="pattern-matching-to-extract-the-position-and-the-company-name" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> pattern matching to extract the position and the company name</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">resume_df &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">filename =</span> <span class="kw">str_to_lower</span>(file_list))
+companyPattern =<span class="st"> &#39;- ([^-]*).txt$&#39;</span> <span class="co"># starting from the end of the string, look for the last &#39;-&#39; and following characters which contain the company name</span>
+<span class="kw">str_view</span>(resume_df<span class="op">$</span>filename, companyPattern) <span class="co"># check the matching pattern</span></code></pre></div>
+<div id="htmlwidget-f9b200b34c4c2cb90553" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f9b200b34c4c2cb90553">{"x":{"html":"<ul>\n  <li>analyste - science des données de fiabilité <span class='match'>- exo.txt<\/span><\/li>\n  <li>analyste des données - scientifique des données <span class='match'>- findev canada.txt<\/span><\/li>\n  <li>analyste données clients <span class='match'>- aimia.txt<\/span><\/li>\n  <li>data analyst <span class='match'>- mindgeek .txt<\/span><\/li>\n  <li>data scientist <span class='match'>- expretio.txt<\/span><\/li>\n  <li>marketing analyst <span class='match'>- davidstea.txt<\/span><\/li>\n  <li>scientifique de données <span class='match'>- aviva.txt<\/span><\/li>\n  <li>scientifique des données <span class='match'>- sun life financial.txt<\/span><\/li>\n  <li>scientifiques de données – analytique clients <span class='match'>- banque nationale.txt<\/span><\/li>\n  <li>scientifiques des données juniors <span class='match'>- ericsson.txt<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">companies &lt;-<span class="st"> </span><span class="kw">str_trim</span>(<span class="kw">str_match</span>(resume_df<span class="op">$</span>filename, companyPattern)[,<span class="dv">2</span>]) <span class="co"># matches the pattern and retrieve only the group capture</span>
+positionPattern =<span class="st"> &#39;(scien|analy)&#39;</span> <span class="co"># maches any of the first word containing eitehr scien (for data science) or analy (for data analyst)</span>
+<span class="kw">str_view</span>(resume_df<span class="op">$</span>filename, positionPattern)</code></pre></div>
+<div id="htmlwidget-e7b72415e834ac1978de" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e7b72415e834ac1978de">{"x":{"html":"<ul>\n  <li><span class='match'>analy<\/span>ste - science des données de fiabilité - exo.txt<\/li>\n  <li><span class='match'>analy<\/span>ste des données - scientifique des données - findev canada.txt<\/li>\n  <li><span class='match'>analy<\/span>ste données clients - aimia.txt<\/li>\n  <li>data <span class='match'>analy<\/span>st - mindgeek .txt<\/li>\n  <li>data <span class='match'>scien<\/span>tist - expretio.txt<\/li>\n  <li>marketing <span class='match'>analy<\/span>st - davidstea.txt<\/li>\n  <li><span class='match'>scien<\/span>tifique de données - aviva.txt<\/li>\n  <li><span class='match'>scien<\/span>tifique des données - sun life financial.txt<\/li>\n  <li><span class='match'>scien<\/span>tifiques de données – analytique clients - banque nationale.txt<\/li>\n  <li><span class='match'>scien<\/span>tifiques des données juniors - ericsson.txt<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">positions &lt;-<span class="st"> </span><span class="kw">str_match</span>(resume_df<span class="op">$</span>filename, positionPattern)[,<span class="dv">2</span>]</code></pre></div>
+</div>
+<div id="ingest-transform-all-the-files-using-tidytext" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Ingest &amp; transform all the files using tidytext</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(DATASET_DIRECTORY)
+stopWordsForFrench &lt;-<span class="st"> </span><span class="kw">get_stopwords</span>(<span class="dt">language =</span> <span class="st">&quot;fr&quot;</span>)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(file_list)) {
+  temp_text &lt;-<span class="st"> </span><span class="kw">read_lines</span>(file_list[i])
+  text1 &lt;-<span class="st"> </span><span class="kw">str_replace_all</span>(temp_text, <span class="st">&quot;[:punct:]&quot;</span>, <span class="st">&quot; &quot;</span>)
+  temp_df &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">text =</span> text1, <span class="dt">company =</span> companies[i], <span class="dt">position =</span> positions[i])
+  output &lt;-<span class="st"> </span><span class="kw">unnest_tokens</span>(temp_df, word, text)
+  output1 &lt;-<span class="st"> </span>output <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">anti_join</span>(stopWordsForFrench)
+  <span class="cf">if</span> (i <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) df &lt;-<span class="st"> </span>output1 <span class="cf">else</span> df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, output1)
+}</code></pre></div>
+</div>
+<div id="visualization---global" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> Visualization - global</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(n <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
+<p><img src="testbook_files/figure-html/text_mining_visualisation_global_barchart-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(word) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">with</span>(<span class="kw">wordcloud</span>(word, n, <span class="dt">max.words =</span> <span class="dv">20</span>))</code></pre></div>
+<p><img src="testbook_files/figure-html/text_mining_visualization_global_nuage-1.png" width="672" /></p>
+</div>
+<div id="analysis-by-position-analyst-vs-data-scientist" class="section level3">
+<h3><span class="header-section-number">4.1.5</span> Analysis by position Analyst vs Data scientist</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(position, word) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(n <span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># if we do not do that the reorder function does not work</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n, <span class="dt">fill =</span> position)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>position, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;occurrences of the word in the job description&quot;</span>,
+  <span class="dt">x =</span> <span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
+<p><img src="testbook_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="running.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

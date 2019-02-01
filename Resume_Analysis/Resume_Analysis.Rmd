@@ -1,12 +1,20 @@
 ---
 title: "Resume_analysis"
 output:
-  pdf_document: default
-  html_notebook: default
   html_document:
     df_print: paged
+  html_notebook: default
+  pdf_document: default
   word_document: default
 ---
+
+```{r}
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, include=TRUE)
+```
+
+```{r}
+DATASET_DIRECTORY <- "./DATA/"
+```
 
 ```{R, echo=FALSE, message=FALSE, warning=FALSE}
 library(dplyr)
@@ -21,7 +29,7 @@ library(ggplot2)
 #LANGUE <- "en"
 CV <- "ébauche_v5.docx"
 LANGUE <- "fr"
-FILENAME <- paste(getwd(), "/", CV, sep="")
+FILENAME <- paste(getwd(), DATASET_DIRECTORY, CV, sep="")
 ```
 
 ```{R, echo=FALSE}

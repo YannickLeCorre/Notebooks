@@ -1,0 +1,12 @@
+--- 
+title: "R Notebooks in a book"
+author: "Yannick Le Corre"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook
+---
+
+#Preface {-}
+
+TODO

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 2 Resume analysis | R Notebooks in a book</title>
-  <meta name="description" content="Chapter 2 Resume analysis | R Notebooks in a book">
+  <title>Chapter 2 Resume_analysis | R Notebooks in a book</title>
+  <meta name="description" content="Chapter 2 Resume_analysis | R Notebooks in a book">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 2 Resume analysis | R Notebooks in a book" />
+  <meta property="og:title" content="Chapter 2 Resume_analysis | R Notebooks in a book" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Resume analysis | R Notebooks in a book" />
+  <meta name="twitter:title" content="Chapter 2 Resume_analysis | R Notebooks in a book" />
   
   
   
@@ -25,15 +25,15 @@
 <meta name="author" content="Yannick Le Corre">
 
 
-<meta name="date" content="2018-12-31">
+<meta name="date" content="2019-02-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="r.html">
-
+<link rel="prev" href="r-language.html">
+<link rel="next" href="running.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -48,6 +48,9 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.3.1/str_view.js"></script>
 
 
 <style type="text/css">
@@ -105,19 +108,33 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>1</b> R</a><ul>
-<li class="chapter" data-level="1.1" data-path="r.html"><a href="r.html#conference-2018"><i class="fa fa-check"></i><b>1.1</b> conference 2018</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="r.html"><a href="r.html#make-a-toy-dataset"><i class="fa fa-check"></i><b>1.1.1</b> make a toy dataset</a></li>
-<li class="chapter" data-level="1.1.2" data-path="r.html"><a href="r.html#examine-your-numeric-columns"><i class="fa fa-check"></i><b>1.1.2</b> Examine your numeric columns</a></li>
-<li class="chapter" data-level="1.1.3" data-path="r.html"><a href="r.html#tidy-columns-containing-colon-separated-values"><i class="fa fa-check"></i><b>1.1.3</b> Tidy columns containing colon separated values</a></li>
-<li class="chapter" data-level="1.1.4" data-path="r.html"><a href="r.html#plot-uncluttered-bar-charts"><i class="fa fa-check"></i><b>1.1.4</b> plot uncluttered bar charts</a></li>
+<li class="chapter" data-level="1" data-path="r-language.html"><a href="r-language.html"><i class="fa fa-check"></i><b>1</b> R language</a><ul>
+<li class="chapter" data-level="1.1" data-path="r-language.html"><a href="r-language.html#r-conference-2018"><i class="fa fa-check"></i><b>1.1</b> R conference 2018</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="r-language.html"><a href="r-language.html#make-a-toy-dataset"><i class="fa fa-check"></i><b>1.1.1</b> make a toy dataset</a></li>
+<li class="chapter" data-level="1.1.2" data-path="r-language.html"><a href="r-language.html#examine-your-numeric-columns"><i class="fa fa-check"></i><b>1.1.2</b> Examine your numeric columns</a></li>
+<li class="chapter" data-level="1.1.3" data-path="r-language.html"><a href="r-language.html#tidy-columns-containing-colon-separated-values"><i class="fa fa-check"></i><b>1.1.3</b> Tidy columns containing colon separated values</a></li>
+<li class="chapter" data-level="1.1.4" data-path="r-language.html"><a href="r-language.html#plot-uncluttered-bar-charts"><i class="fa fa-check"></i><b>1.1.4</b> plot uncluttered bar charts</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="r.html"><a href="r.html#sams-teach-yourself-r"><i class="fa fa-check"></i><b>1.2</b> Sams Teach Yourself R</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="r.html"><a href="r.html#cut-et-split"><i class="fa fa-check"></i><b>1.2.1</b> cut et split</a></li>
+<li class="chapter" data-level="1.2" data-path="r-language.html"><a href="r-language.html#sams-teach-yourself-r"><i class="fa fa-check"></i><b>1.2</b> Sams Teach Yourself R</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="r-language.html"><a href="r-language.html#cut-et-split"><i class="fa fa-check"></i><b>1.2.1</b> cut et split</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="r.html"><a href="r.html#advanced-r"><i class="fa fa-check"></i><b>1.3</b> Advanced R</a></li>
+<li class="chapter" data-level="1.3" data-path="r-language.html"><a href="r-language.html#advanced-r"><i class="fa fa-check"></i><b>1.3</b> Advanced R</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="resume-analysis.html"><a href="resume-analysis.html"><i class="fa fa-check"></i><b>2</b> Resume analysis</a></li>
+<li class="chapter" data-level="2" data-path="resume-analysis.html"><a href="resume-analysis.html"><i class="fa fa-check"></i><b>2</b> Resume_analysis</a></li>
+<li class="chapter" data-level="3" data-path="running.html"><a href="running.html"><i class="fa fa-check"></i><b>3</b> running</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="running.html"><a href="running.html#etude-du-schema"><i class="fa fa-check"></i><b>3.0.1</b> Étude du schéma</a></li>
+<li class="chapter" data-level="3.0.2" data-path="running.html"><a href="running.html#verification-que-lensemble-des-fichiers-refletent-cette-meme-structure"><i class="fa fa-check"></i><b>3.0.2</b> Vérification que l’ensemble des fichiers reflètent cette même structure</a></li>
+<li class="chapter" data-level="3.0.3" data-path="running.html"><a href="running.html#lecture-de-lensemble-des-donnees-format-tidy"><i class="fa fa-check"></i><b>3.0.3</b> Lecture de l’ensemble des données (format tidy)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>4</b> text mining</a><ul>
+<li class="chapter" data-level="4.1" data-path="text-mining.html"><a href="text-mining.html#occurence-of-words"><i class="fa fa-check"></i><b>4.1</b> Occurence of words</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="text-mining.html"><a href="text-mining.html#proof-of-concept"><i class="fa fa-check"></i><b>4.1.1</b> Proof of concept</a></li>
+<li class="chapter" data-level="4.1.2" data-path="text-mining.html"><a href="text-mining.html#pattern-matching-to-extract-the-position-and-the-company-name"><i class="fa fa-check"></i><b>4.1.2</b> pattern matching to extract the position and the company name</a></li>
+<li class="chapter" data-level="4.1.3" data-path="text-mining.html"><a href="text-mining.html#ingest-transform-all-the-files-using-tidytext"><i class="fa fa-check"></i><b>4.1.3</b> Ingest &amp; transform all the files using tidytext</a></li>
+<li class="chapter" data-level="4.1.4" data-path="text-mining.html"><a href="text-mining.html#visualization---global"><i class="fa fa-check"></i><b>4.1.4</b> Visualization - global</a></li>
+<li class="chapter" data-level="4.1.5" data-path="text-mining.html"><a href="text-mining.html#analysis-by-position-analyst-vs-data-scientist"><i class="fa fa-check"></i><b>4.1.5</b> Analysis by position Analyst vs Data scientist</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -138,12 +155,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="resume-analysis" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Resume analysis</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">FILENAME &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="kw">getwd</span>(), <span class="st">&quot;/2019_last.docx&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</code></pre></div>
-<p><img src="testbook_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
-<p>Filtre des occurences &gt; 5</p>
-<p><img src="testbook_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<div id="resume_analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Resume_analysis</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">warning=</span><span class="ot">FALSE</span>, <span class="dt">message=</span><span class="ot">FALSE</span>, <span class="dt">include=</span><span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DATASET_DIRECTORY &lt;-<span class="st"> &quot;./DATA/&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##CV &lt;- &quot;2019_last.docx&quot;
+##LANGUE &lt;- &quot;en&quot;
+CV &lt;-<span class="st"> &quot;ébauche_v5.docx&quot;</span>
+LANGUE &lt;-<span class="st"> &quot;fr&quot;</span>
+FILENAME &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="kw">getwd</span>(), DATASET_DIRECTORY, CV, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</code></pre></div>
+<p><img src="testbook_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>Filtre des occurences &gt; <span class="math inline">\(3\)</span></p>
+<p><img src="testbook_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 
 </div>
             </section>
@@ -151,8 +174,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="r-language.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="running.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -189,7 +212,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["testbook.pdf", "testbook.epub"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }
@@ -197,6 +220,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
