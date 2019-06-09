@@ -4,7 +4,7 @@
 
 	- Sams Teach Yourself R
 	- Advanced R by Hadley Wickham
-	
+
 ### Resume_Analysis: word cloud from a Word document *(status: completed)*
 
 ### Text Mining: exploration of the library tidytext *(status: completed)*
@@ -13,6 +13,6 @@
 
 # Book
 
-The code in **prepare_book.scala** is used to crawl through the files in the directory in order to build the BOOK directory which contain the structure to create a bookdown document that is published in Github: https://yannicklecorre.github.io/Notebooks/ . 
+The code in **prepare_book.scala** is used to crawl through the files in the directory in order to build the BOOK directory which contain the structure to create a bookdown document that is published in Github: https://yannicklecorre.github.io/Notebooks/ .
 
-One as to add the file .nojekyll in the docs folder in order to be rendered through github.
+One has to add the file .nojekyll in the docs folder in order to be rendered through github.
